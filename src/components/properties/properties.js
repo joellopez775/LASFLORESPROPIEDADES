@@ -78,11 +78,12 @@ export default ()=> {
     data: null,
   })
   
+  
   const getProperties = async ()=> {
     setQuery({ loading: true });
     try{
       const baseUrl = `https://wsnzm.clasihome.com:3443/api/conv/properties/`;
-      const params = location.search ? location.search : `?status=PUBLICADA,ARRENDADA,VENDIDA&email=contacto@iaga.cl&limit=12&typeId=${typeId}&id=${officeId}`;
+      const params = location.search ? location.search : `?status=PUBLICADA,ARRENDADA,VENDIDA&email=paolamunoz@nexxos.cl&limit=12&typeId=${typeId}&id=${officeId}`;
       const url = baseUrl + params;
       const data = await fetch(url);
       const result = await data.json();
@@ -97,10 +98,11 @@ export default ()=> {
   const handlePaginate =(val)=> {
       console.log(val.selected);
       //const url = urlBuilder('/properties',{...params, page: val.selected} );
-      const params = location.search ? location.search : `?status=PUBLICADA,ARRENDADA,VENDIDA&email=contacto@iaga.cl&limit=12&typeId=${typeId}&id=${officeId}`;
+      const params = location.search ? location.search : `?status=PUBLICADA,ARRENDADA,VENDIDA&email=paolamunoz@nexxos.cl&limit=12&typeId=${typeId}&id=${officeId}`;
       const url = `/properties/` + params + `&page=${val.selected}`;
       navigate(url);
   };
+
 
   useEffect(()=>{
     getProperties();

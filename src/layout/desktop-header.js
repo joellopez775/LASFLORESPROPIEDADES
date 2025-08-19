@@ -9,13 +9,29 @@ import Logo from './logo';
 import { NavLink, NavButton } from '../styled-components';
 
 const Header = styled.header`
-  background-color: transparent;
+  background-color:  ${props => props.theme.primaryColor};
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-`
+
+
+  `
+
+const ContactButton = styled(NavLink)`
+  background-color: #F9A200;
+  color: #fff !important;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px; /* Esto lo convierte en óvalo */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e08f00;
+    text-decoration: none;
+  }
+`;
 const Navigation = styled.nav`
   padding: 1rem 0;
   display: flex;
@@ -61,9 +77,9 @@ export default ({ dark })=> {
             </NavItem>
             <NavItem>
               <AniLink paintDrip hex={state.primaryColor} to="/contact" duration={.5}>
-                <NavLink dark={dark} light={!dark}>
-                  Contacto
-                </NavLink>
+               <ContactButton dark={dark} light={!dark}>
+               Contacto
+               </ContactButton>
               </AniLink>                                    
             </NavItem>
           </NavList>

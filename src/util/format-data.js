@@ -4,7 +4,7 @@ export default (data) => {
       builderId: data._id ? data._id : "5fb2a5f3ea262c2e14e462ad",
       typeId: data.user ? "user" : "office",
       officeId: data.user ? data.user : data.office,
-      primaryColor: data.primaryColor ? data.primaryColor : "#dc314f",
+      primaryColor: data.primaryColor ? data.primaryColor : "#00474B",
       address: data.address ? data.address : "chile, santiago. Av 1 calle 2 local 1a",
       email: data.email ? data.email : "contacto@clasihome.com",
       facebook: data.facebook ? data.facebook : "https://facebook.com",

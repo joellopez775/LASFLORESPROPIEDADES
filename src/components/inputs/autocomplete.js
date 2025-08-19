@@ -10,13 +10,13 @@ const InputLabel = styled.label`
   position: relative;
   display: flex;
   align-items: center;
-  height: 44px;
+  height: 60px;
   width: 100%;
   margin-bottom: 1rem;
   border: ${props => props.gray ? "1px solid #000000" : "none" };
   padding-right: 16px;
   color: ${props => props.primary ? props.theme.primaryColor : "#212121"};
-  border-radius: 6px;
+  border-radius: 0px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
   @media(min-width: 768px){
     margin-bottom: ${props => props.vertical ? "1rem" : "0"};
@@ -48,6 +48,7 @@ const OptionsMainCont = styled.ul`
   padding: 1rem 5px;
   border: 1px solid #cecece;
   z-index: 100;
+  list-style: none;
 `
 const Option = styled.button`
   background-color: transparent;
@@ -57,6 +58,7 @@ const Option = styled.button`
   transition: 250ms ease;
   display: flex;
   text-align: left;
+  position: relative;
   &:hover{
     color: ${props => props.theme.primaryColor} !important;
   }
@@ -114,7 +116,7 @@ export default ({ selected, onSelect, id, placeholder, options, gray, shadow, pr
       setState({ loading: true });
       try{
         setValue(value);
-        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.officeId}&typeId=${contextData.typeId}&status=PUBLICADA&stringSearch=${value}`;
+        const propertiesUrl = `https://wsnzm.clasihome.com:3443/api/conv/properties?id=${contextData.officeId}&typeId=${contextData.typeId}&status=PUBLICADA&stringSearch=${value}`;
         const data = await fetch(propertiesUrl);
         const result = await data.json();
         setState({ data: value.length ? result.properties : [], loading: false });

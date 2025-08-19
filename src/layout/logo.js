@@ -3,12 +3,20 @@ import context from '../context';
 import styled from 'styled-components';
 
 const Logo = styled.img`
-  min-width: 180px;
-  min-height: 81.38px;
-  max-width: 180px;
-  max-height: 81.38px;
+  width: 80%;
+  max-width: 280px;
+  height: auto;
   object-fit: contain;
   object-position: center;
+  position: relative;
+  top: -10px;   /* lo sube */
+  left: -10px;  /* lo mueve a la izquierda */
+
+  @media (min-width: 768px) {
+    max-width: 400px;
+    top: -20px;
+    left: -20px; /* más hacia la izquierda en pantallas grandes */
+  }
 `
 
 export default ({ dark, mobile })=> {

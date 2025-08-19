@@ -26,9 +26,9 @@ const Select = styled.select`
   -moz-appearance: none;
   appearance: none; 
   background-color: #fff;
-  border-radius: 6px;
-  padding: 5px;
-  height: 44px;
+  border-radius: 0px;
+  padding: .5rem;
+  height: 60px;
   width: 100%;
   background-image: ${props => props.primary
   //? `url('data:image/svg+xml;utf8,<svg stroke="%23${props.theme.primaryColor.substring(1)}" width="28" height="6.633" fill="none" version="1.1" viewBox="0 0 28 6.633" xmlns="http://www.w3.org/2000/svg"><path d="m11.368 0.63261-5.3678 5.3678-5.3678-5.3678"/></svg>')`
